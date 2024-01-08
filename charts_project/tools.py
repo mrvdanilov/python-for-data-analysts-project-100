@@ -28,6 +28,7 @@ def clean_registration_data(df):
 def clean_visit_data(df):
 
     df_cleaned = df.copy()
+    print('TOTAL_VISITS = ', len(df_cleaned))
     # Convert 'visit_dt' to datetime
     try:
         df_cleaned['visit_dt'] = pd.to_datetime(df_cleaned['visit_dt'])
@@ -35,10 +36,10 @@ def clean_visit_data(df):
         print('visit_dt id not in datetime format')
 
     df_cleaned = df_cleaned.sort_values(by=['anonymous_id', 'visit_dt']).drop_duplicates(subset='anonymous_id')
+    df_cleaned.sort_values(by='anonymous_id').to_csv('./test.csv')
 
-    # Filter out rows where 'user_agent' contains 'https://' (indicating bots)
-    df_cleaned['user_agent'] = df_cleaned['user_agent'].fillna('')
-    df_cleaned = df_cleaned[~df_cleaned['user_agent'].str.contains('https://')]
+    # Filter out rows where 'user_agent' contains 'bot' (indicating bots)
+    df_cleaned = df_cleaned[~df_cleaned['user_agent'].str.contains('bot')]
 
     # Remove extra characters around 'platform' values
     df_cleaned['platform'] = df_cleaned['platform'].str.strip("`")
@@ -202,6 +203,7 @@ def merge_dataframes_and_calculate_conversion(df_visits, df_registrations):
 
     # Расчет конверсии
     merged_df['conversion'] = (merged_df['registrations'] / merged_df['visits']) * 100
+    merged_df.to_json('conversion.json')
     return merged_df
 
 
