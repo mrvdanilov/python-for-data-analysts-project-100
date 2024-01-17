@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "first"
+name = "hexlet-code"
 version = "0.1.0"
 description = "My first poetry project"
 authors = ["Vugar"]
