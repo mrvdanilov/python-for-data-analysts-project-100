@@ -2,22 +2,19 @@
 name = "hexlet-code"
 version = "0.1.0"
 description = ""
-authors = ["Yulia Surikova <shprovar@gmail.com>"]
+authors = ["Your Name <you@example.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
-pandas = "^2.0.3"
-requests = "^2.31.0"
-matplotlib = "^3.7.2"
+pandas = "^1.4.2"
+matplotlib = "^3.5.1"
+requests = "^2.27.1"
 python-dotenv = "^0.21.0"
-numpy = "^1.24.3"
 
+[tool.poetry.scripts]
+main = "main:run_all"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
-
-
-[tool.poetry.scripts]
-main = "main:run_all"
