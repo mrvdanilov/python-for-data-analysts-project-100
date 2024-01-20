@@ -1,2 +1,2 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/mrvdanilov/python-for-data-analysts-project-100/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/mrvdanilov/python-for-data-analysts-project-100/actions)
+[![Actions Status](https://github.com/Shprovar/data-analytics-project-100/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Shprovar/data-analytics-project-100/actions)
